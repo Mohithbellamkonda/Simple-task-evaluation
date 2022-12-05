@@ -1,0 +1,67 @@
+1.
+namespace overriding
+{
+
+    class Birds
+    {
+        public virtual void fly()
+        {
+            Console.WriteLine("Iam flying");
+        }
+    }
+    class penguin : Birds
+    {
+        public void fly()
+        {
+            Console.WriteLine("Sorry! I cannot fly");
+        }
+    }
+
+    
+    
+    
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Birds birds = new Birds();
+            birds.fly();
+            penguin penguin = new penguin();
+            penguin.fly();
+        }
+    }
+}
+
+
+2.Try catch statement consists of a try block followed by one or more catch clauses for handiling an exception. Catch clauses specify handlers for different exeception.
+When an exception is thrown,Common language runtime(CLR) looks for the catch statement that handles this exception.
+
+3.
+
+namespace Ref_Out
+{ 
+
+    internal class Program
+    {
+        public void add(int a ,int b , ref int c,ref int d)
+        {
+            c = a + b;
+            d = a*b;
+        }
+        public void add1(int a, int b, out int c, out int d)
+        {
+            c = a + b;
+            d = a*b;
+        }
+        static void Main(string[] args)
+        {
+            Program program = new Program();
+            int p = 0;
+            int q = 0;
+            program.add(5, 7, ref p, ref q);
+            Console.WriteLine(p+" "+q);
+            program.add1(6, 7, out int m, out int n);
+            Console.WriteLine(m + " " + n);
+        }
+    }
+}
